@@ -1,0 +1,239 @@
+/* General styles. */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: #FFF;
+    font-weight: bold;
+    padding: 0 15%;
+    margin: 0 0 60px;
+}
+
+h1 { font-size: 56px; }
+
+h2 { font-size: 40px; }
+
+h3 {
+    font-size: 28px;
+    font-weight: 300;
+}
+
+h4 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    padding: 0;
+}
+
+h1 + h3 {
+    margin-top: -30px;
+}
+
+h3,
+p {
+    color: rgba(255, 255, 255, .5);
+}
+
+p {
+    font-size: 75%;
+}
+
+/* Style the slides. */
+.slide-1 {
+    background-image: radial-gradient(50% 154%, #5B6F93 0%, #2E3C5A 100%);    
+}
+
+.slide-2 {
+    background-image: radial-gradient(50% 154%, #5B8C93 0%, #2E565A 100%);
+}
+
+.slide-3 {
+    background-image: radial-gradient(50% 154%, #675B93 4%, #2E3C5A 100%);
+}
+
+.columns {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.columns:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.column {
+    width: 20%;
+    float: left;
+    margin: 0 2.5%;
+}
+
+.column img {
+    margin-bottom: 30px;
+}
+
+.button {
+    background: #FFFFFF;
+    border-radius: 100px;
+    height: 60px;
+    display: inline-block;
+    padding: 0 60px;
+
+    color: #384164;
+    line-height: 60px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+}
+
+.button:hover {
+    color: #FFFFFF;
+    background: #384164;
+}
+
+/* Style Sequence. */
+#sequence {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 0;
+}
+
+#sequence .seq-canvas,
+#sequence .seq-canvas > * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#sequence .seq-canvas {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    white-space: nowrap;
+}
+
+#sequence .seq-canvas > * {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    height: 100%;
+    white-space: normal;
+    text-align: center;
+}
+
+#sequence .content {
+    margin: 90px 5% 0;
+}
+
+/* Animations. */
+#sequence h1,
+#sequence h2,
+#sequence h3,
+#sequence h4,
+#sequence p {
+    opacity: 0;
+    -webkit-transition-duration: 1s;
+    transition-duration: 1s;
+}
+
+#sequence .button {
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;    
+    -webkit-transform: translate(0, 2320px);
+    transform: translate(0, 2320px);
+}
+
+#sequence .content img {
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;    
+    -webkit-transform: translate(0, -320px);
+    transform: translate(0, -320px);
+}
+
+#sequence h1,
+#sequence h2,
+#sequence h4 {
+    -webkit-transform: translate(0, -20px);
+    transform: translate(0, -20px);
+}
+
+#sequence h3,
+#sequence p {
+    -webkit-transform: translate(0, 20px);
+    transform: translate(0, 20px);
+}
+
+#sequence .seq-in h1,
+#sequence .seq-in h2,
+#sequence .seq-in h3,
+#sequence .seq-in h4,
+#sequence .seq-in p {
+    opacity: 1;
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
+
+#sequence .seq-in .button,
+#sequence .seq-in .content img {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
+
+#sequence .seq-out h1,
+#sequence .seq-out h2,
+#sequence .seq-out h3,
+#sequence .seq-out h4,
+#sequence .seq-out p {
+    opacity: 1;
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
+
+#sequence .seq-out .button,
+#sequence .seq-out .content img {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
+
+
+/* Navigation. */
+#sequence nav {
+    position: absolute;
+    z-index: 9999999;
+    left: 50%;
+    bottom: 60px;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.seq-next,
+.seq-prev {
+    display: inline-block;
+    text-decoration: none;
+    width: 60px;
+    height: 60px;
+    opacity: .25;
+    transition: all .3s ease-in-out;
+    margin: 0 15px;
+}
+
+.seq-next:hover,
+.seq-prev:hover {
+    opacity: 1;
+}
